@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name ="NYPost Test Script" parallel="false">
+
+        <parameter name="url" value="https://nypost.com/"></parameter>
+
+    <test name = "NYPost Home">
+
+        <classes>
+<!--            <class name="news.TestNewsMenu"></class>-->
+<!--            <class name="news.DropDownNYPost"></class>-->
+            <class name="news.TestNewsSection"></class>
+        </classes>
+
+    </test>
+
+</suite>
