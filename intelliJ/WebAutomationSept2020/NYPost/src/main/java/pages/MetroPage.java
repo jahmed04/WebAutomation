@@ -15,6 +15,10 @@ public class MetroPage extends News {
         PageFactory.initElements (driver, this);
     }
 
-    @FindBy (how = How.CSS, using = "div.headline-wrapper a>nth-child(2) h3")
+    @FindBy (how = How.CSS, using = "div.headline-container a:nth-child(2) h3")
     public static WebElement headLineNewsWebElement;
+
+    public WebElement getHeadLineNewsWebElement() {
+        return headLineNewsWebElement;
+    }
 }

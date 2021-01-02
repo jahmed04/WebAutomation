@@ -12,6 +12,7 @@ public class TestNewsMenu extends CommonAPI {
     public void test1() {
 
         clickOnWebElement("svg.menu-icon-svg");
+        //clickOnWebElement("div.headline-container a>nth-child(2) h3");
 
 
         // driver.findElement(By.cssSelector("svg.icon menu-icon-svg")).click();  // clicking the menu
