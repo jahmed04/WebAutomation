@@ -15,23 +15,22 @@ public class ConnectToSqlDB {
     public static PreparedStatement ps = null;
     public static ResultSet resultSet = null;
 
-    public static Properties loadProperties() throws IOException {
+    public static Properties loadlocalProperties() throws IOException {
         Properties prop = new Properties();
-        InputStream ism = new FileInputStream("java/local-secret.properties");
+        InputStream ism = new FileInputStream("../Generic/src/local-secret.properties");
         prop.load(ism);
         ism.close();
         return prop;
     }
 
     public static Connection connectToSqlDatabase() throws IOException, SQLException, ClassNotFoundException {
-        Properties prop = loadProperties();
+        Properties prop = loadlocalProperties();
         String driverClass = prop.getProperty("MYSQLJDBC.driver");
         String url = prop.getProperty("MYSQLJDBC.url");
         String userName = prop.getProperty("MYSQLJDBC.userName");
         String password = prop.getProperty("MYSQLJDBC.password");
         Class.forName(driverClass);
         connect = DriverManager.getConnection(url,userName,password);
-        System.out.println("Database connected");
         System.out.println("Database connected");
         return connect;
     }

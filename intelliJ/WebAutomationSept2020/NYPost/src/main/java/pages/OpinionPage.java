@@ -6,16 +6,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class MetroPage extends News {
-    
+public class OpinionPage extends News{
 
     private final WebDriver driver;
-    public MetroPage(WebDriver driver){
+    public OpinionPage (WebDriver driver){
         this.driver = driver;
         PageFactory.initElements (driver, this);
     }
 
-    @FindBy (how = How.CSS, using = "div.headline-container a:nth-child(2) h3")
+    @FindBy(how = How.CSS, using = "div.headline-container a:nth-child(2) h3")
     public static WebElement headLineNewsWebElement;
 
     public WebElement getHeadLineNewsWebElement() {
