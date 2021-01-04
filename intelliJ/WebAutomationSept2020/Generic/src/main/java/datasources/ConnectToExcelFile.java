@@ -20,7 +20,7 @@ public class ConnectToExcelFile {
     public static FileOutputStream fio = null;
     public static int numberOfRows, numberOfCol, rowNum;
 
-    public static String[][] fileReader1(String path,int sheetIndex) throws IOException {
+    public String[][] fileReader1(String path,int sheetIndex) throws IOException {
         String[][] data = {};
         File file = new File(path);
         FileInputStream fis = new FileInputStream(file);
@@ -41,9 +41,9 @@ public class ConnectToExcelFile {
         return data;
     }
 
-    public static String[] fileReader2(String path, int sheetIndex) throws IOException {
+    public String[] fileReader2(String path, int sheetIndex) throws IOException {
         String[] data = {};
-        File file = new File(path);
+        File file = new File(path); // issue
         FileInputStream fis = new FileInputStream(file);
         wb = new HSSFWorkbook(fis);
         sheet = wb.getSheetAt(sheetIndex);
@@ -97,14 +97,17 @@ public class ConnectToExcelFile {
         wb.close();
     }
 
+
     public static void main(String [] args)throws IOException {
-        String [][] dataSource = {};
-        String path = System.getProperty("user.dir")+"/BestBuy/data/best-buy-file2.xls";
-        dataSource = fileReader1(path,0);
-        for(int i=1; i<dataSource.length; i++) {
-            for(int j=0; j<dataSource[i].length; j++) {
-                System.out.println(dataSource[i][j]);
-            }
-        }
+//        String [][] dataSource = {};
+//        String path = System.getProperty("user.dir")+"/BestBuy/data/best-buy-file2.xls";
+//        dataSource = fileReader1(path,0);
+//        for(int i=1; i<dataSource.length; i++) {
+//            for(int j=0; j<dataSource[i].length; j++) {
+//                System.out.println(dataSource[i][j]);
+//            }
+//        }
+
+
     }
 }

@@ -13,6 +13,7 @@
         <module>Amazon</module>
         <module>NYPost</module>
         <module>CNN</module>
+        <module>W3Schools</module>
     </modules>
 
     <dependencyManagement>
