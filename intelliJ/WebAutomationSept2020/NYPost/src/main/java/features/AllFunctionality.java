@@ -1,5 +1,6 @@
 package features;
 
+import datafetch.FetchTheSteps;
 import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -42,8 +43,16 @@ public class AllFunctionality {
         clickOnSectionMenu(driver);
         sectionPage = PageFactory.initElements(driver, SectionPage.class);
 
+        // this two lines
+
+        //String headLineNews = sectionPage.goToMetroPage(driver).getHeadLineNewsText();
+        //System.out.println(headLineNews);
+
+        clickOnSectionMenu(driver);
+
         sectionPage.gotoNewsPage(driver).clickOnHeadLineNews();
         clickOnSectionMenu(driver);
+
 
         sectionPage.goToMetroPage(driver).clickOnHeadLineNews();
         clickOnSectionMenu(driver);
@@ -51,43 +60,75 @@ public class AllFunctionality {
         sectionPage.gotoSportsPage(driver).clickOnHeadLineNews();
         clickOnSectionMenu(driver);
 
-        sectionPage.goToBusinessPage(driver).clickOnHeadLineNews();
-        clickOnSectionMenu(driver);
 
-        sectionPage.gotoOpinionPage(driver).clickOnHeadLineNews();
-        clickOnSectionMenu(driver);
 
-        sectionPage.goToEntertainmentPage(driver).clickOnHeadLineNews();
-        clickOnSectionMenu(driver);
 
-        sectionPage.gotoFashionPage(driver).clickOnHeadLineNews();
-        clickOnSectionMenu(driver);
 
-        sectionPage.gotoLivingPage(driver).clickOnHeadLineNews();
-        clickOnSectionMenu(driver);
+        // before adding excel file test update
 
-        sectionPage.gotoMediaPage(driver).clickOnHeadLineNews();
-        clickOnSectionMenu(driver);
 
-        sectionPage.gotoTechPage(driver).clickOnHeadLineNews();
-        clickOnSectionMenu(driver);
-
-        sectionPage.gotoRealEstatePage(driver).clickOnHeadLineNews();
-        clickOnSectionMenu(driver);
-
-        sectionPage.gotoVideoPage(driver).clickOnHeadLineNews();
-        clickOnSectionMenu(driver);
-
-        sectionPage.gotoPhotoPage(driver).clickOnHeadLineNews();
-        clickOnSectionMenu(driver);
-
-        sectionPage.gotoPageSixPage(driver).clickOnHeadLineNews();
-        clickOnSectionMenu(driver);
-
-        sectionPage.gotoShoppingPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//        sectionPage = PageFactory.initElements(driver, SectionPage.class);
+//
+//        sectionPage.gotoNewsPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.goToMetroPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.gotoSportsPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.goToBusinessPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.gotoOpinionPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.goToEntertainmentPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.gotoFashionPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.gotoLivingPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.gotoMediaPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.gotoTechPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.gotoRealEstatePage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.gotoVideoPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.gotoPhotoPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.gotoPageSixPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.gotoShoppingPage(driver).clickOnHeadLineNews();
 
 
     }
+
+
+    //  excel file related method
+
+    public void runAllTheFeatureTest (WebDriver driver) throws InterruptedException,IOException {
+        FetchTheSteps fetchTheSteps = new FetchTheSteps();
+        String [] featureSteps = fetchTheSteps.getDataFromExcelFile(); // issue
+
+        for (int i=1; i< featureSteps.length; i++) {
+            select(featureSteps[i], driver );
+        }
+    }
+
 
     public void select(String featureName, WebDriver driver)throws InterruptedException, IOException {
         switch(featureName){
