@@ -25,27 +25,32 @@ import java.util.concurrent.TimeUnit;
 
 public class CommonAPI {
 
-    public String browserStackUserName = "your_user_name";
-    public String browserStackAccessKey = "Your_Access_Key";
-    public String sauceLabsUserName = "";
-    public String sauceLabsAccessKey = "";
+    public String browserStackUserName = null;    //"your_user_name";
+    public String browserStackAccessKey = null;      //"Your_Access_Key";
+    public String sauceLabsUserName = null;               //"";
+    public String sauceLabsAccessKey = null;      //"";
 
 
     public static WebDriver driver = null;
 
-    @Parameters({ "useCloudEnv", "envName",  "os",  "os_version",
-                 "browserName",  "browserVersion","url"})
+    @Parameters({"url"})
     @BeforeMethod
-    public void setUp(String useCloudEnv, String envName, String os, String os_version,
-                      String browserName, String browserVersion, String url) throws MalformedURLException {
+    public void setUp(String url) {
 
-        if(useCloudEnv.equalsIgnoreCase("true")) {
-            getCloudDriver( envName,  os,  os_version,
-                     browserName,  browserVersion );
-        }
-        else if (useCloudEnv.equalsIgnoreCase("false")) {
-            getLocalDriver(os, browserName);
-        }
+
+//    @Parameters({ "useCloudEnv", "envName",  "os",  "os_version",
+//                 "browserName",  "browserVersion","url"})
+//    @BeforeMethod
+//    public void setUp(String useCloudEnv, String envName, String os, String os_version,
+//                      String browserName, String browserVersion, String url) throws MalformedURLException {
+//
+//        if(useCloudEnv.equalsIgnoreCase("true")) {
+//            getCloudDriver( envName,  os,  os_version,
+//                     browserName,  browserVersion );
+//        }
+//        else if (useCloudEnv.equalsIgnoreCase("false")) {
+//            getLocalDriver(os, browserName);
+//        }
 
         // using firefox driver
         //System.setProperty("webdriver.gecko.driver", "/Users/ahmed/intelliJ/WebAutomationSept2020/Generic/driver/geckodriver");
@@ -247,11 +252,16 @@ public class CommonAPI {
         return listOfText;
     }
 
+
+
+
     public void printText(List<String> list){
         for (String st: list) {
             System.out.println(st);
         }
     }
+
+
 
     public void sleepFor(int sec) throws InterruptedException {
         Thread.sleep(1000 * sec);

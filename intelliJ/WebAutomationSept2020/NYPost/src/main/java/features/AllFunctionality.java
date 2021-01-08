@@ -38,27 +38,27 @@ public class AllFunctionality {
         landingPage.clickOnSectionMenu();
     }
 
-    public void sectionsMenu(WebDriver driver) throws InterruptedException {    // clicking into different sections
+    public void sectionsMenu(WebDriver driver) throws InterruptedException, IOException {    // clicking into different sections
 
-        clickOnSectionMenu(driver);
-        sectionPage = PageFactory.initElements(driver, SectionPage.class);
-
-        // this two lines
-
-        //String headLineNews = sectionPage.goToMetroPage(driver).getHeadLineNewsText();
-        //System.out.println(headLineNews);
-
-        clickOnSectionMenu(driver);
-
-        sectionPage.gotoNewsPage(driver).clickOnHeadLineNews();
-        clickOnSectionMenu(driver);
-
-
-        sectionPage.goToMetroPage(driver).clickOnHeadLineNews();
-        clickOnSectionMenu(driver);
-
-        sectionPage.gotoSportsPage(driver).clickOnHeadLineNews();
-        clickOnSectionMenu(driver);
+//        clickOnSectionMenu(driver);
+//        SectionPage = PageFactory.initElements(driver, SectionPage.class);
+//
+////        // these two lines
+////
+//        String headLineNews = sectionPage.goToMetroPage(driver).
+//        System.out.println(headLineNews);
+//
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.gotoNewsPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//
+//        sectionPage.goToMetroPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//
+//        sectionPage.gotoSportsPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
 
 
 
@@ -67,10 +67,10 @@ public class AllFunctionality {
         // before adding excel file test update
 
 
-//        clickOnSectionMenu(driver);
-//        sectionPage = PageFactory.initElements(driver, SectionPage.class);
-//
-//        sectionPage.gotoNewsPage(driver).clickOnHeadLineNews();
+        clickOnSectionMenu(driver);
+        sectionPage = PageFactory.initElements(driver, SectionPage.class);
+
+        sectionPage.gotoNewsPage(driver).clickOnHeadLineNews();
 //        clickOnSectionMenu(driver);
 //
 //        sectionPage.goToMetroPage(driver).clickOnHeadLineNews();
@@ -113,16 +113,18 @@ public class AllFunctionality {
 //        clickOnSectionMenu(driver);
 //
 //        sectionPage.gotoShoppingPage(driver).clickOnHeadLineNews();
+//
+//
+//    }
 
 
-    }
 
 
     //  excel file related method
 
     public void runAllTheFeatureTest (WebDriver driver) throws InterruptedException,IOException {
         FetchTheSteps fetchTheSteps = new FetchTheSteps();
-        String [] featureSteps = fetchTheSteps.getDataFromExcelFile(); // issue
+        String [] featureSteps = fetchTheSteps.getDataFromExcelFile();   // issue
 
         for (int i=1; i< featureSteps.length; i++) {
             select(featureSteps[i], driver );
@@ -130,7 +132,9 @@ public class AllFunctionality {
     }
 
 
-    public void select(String featureName, WebDriver driver)throws InterruptedException, IOException {
+
+
+    public void select(String featureName, WebDriver driver) throws InterruptedException, IOException {
         switch(featureName){
             case "signUp":
                 signUp(driver);

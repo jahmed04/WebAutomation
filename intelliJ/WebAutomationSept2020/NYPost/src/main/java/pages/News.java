@@ -21,4 +21,5 @@ public class News {
         CommonAPI.waitUntilClickAble(headLineNewsWebElement);
         getHeadLineNewsWebElement().click();
     }
+
 }

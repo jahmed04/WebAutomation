@@ -10,8 +10,17 @@ import java.util.List;
 public class DataReader {
 
     ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
+
+
     public List<String> getItemListFromDB() throws Exception {
-        List<String> list = connectToSqlDB.readDataBase("ItemList", "items");
+        List<String> list = connectToSqlDB.readDataBase("ItemList", "Items");
         return list;
     }
+
+//    public List<String> getSecondListFromDB() throws Exception {
+//        List<String> list1 = connectToSqlDB.readDataBase("SecondItemList", "Items");
+//        return list1;
+//    }
+
+
 }

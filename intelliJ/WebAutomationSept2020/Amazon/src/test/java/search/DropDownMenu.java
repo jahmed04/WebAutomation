@@ -12,11 +12,11 @@ import java.util.List;
 
 public class DropDownMenu extends CommonAPI {
 
-    @Test
-    public void dropDown(){
-        List<String> textList = getListOfText(".nav-search-dropdown.searchSelect option");
-        printText(textList);
-    }
+//    @Test
+//    public void dropDown(){
+//        List<String> textList = getListOfText(".nav-search-dropdown.searchSelect option");
+//        printText(textList);
+//    }
 
 
 

@@ -15,7 +15,7 @@ public class ConnectToSqlDB {
     public static PreparedStatement ps = null;
     public static ResultSet resultSet = null;
 
-    public static Properties loadlocalProperties() throws IOException {
+    public static Properties loadlocalProperties() throws IOException { // loadlocalProperties = loadProperties
         Properties prop = new Properties();
         InputStream ism = new FileInputStream("../Generic/src/local-secret.properties");
         prop.load(ism);
@@ -24,7 +24,7 @@ public class ConnectToSqlDB {
     }
 
     public static Connection connectToSqlDatabase() throws IOException, SQLException, ClassNotFoundException {
-        Properties prop = loadlocalProperties();
+        Properties prop = loadlocalProperties();   // loadProperties
         String driverClass = prop.getProperty("MYSQLJDBC.driver");
         String url = prop.getProperty("MYSQLJDBC.url");
         String userName = prop.getProperty("MYSQLJDBC.userName");
@@ -41,7 +41,7 @@ public class ConnectToSqlDB {
         try{
             connectToSqlDatabase();
             statement = connect.createStatement();
-            resultSet = statement.executeQuery("");   // input = "select* from" + tableName
+            resultSet = statement.executeQuery("select* from " + tableName+";");   // input = "select* from" + tableName
             data = getResultSetData (resultSet, columnName);
         } catch (ClassNotFoundException e) {
             throw e;
@@ -172,11 +172,14 @@ public class ConnectToSqlDB {
             e.printStackTrace();
         }
     }
-
-    public static void main(String[] args)throws IOException, SQLException, ClassNotFoundException {
+//
+//           public static void main(String[] args)throws IOException, SQLException, ClassNotFoundException {
 //        List<User> list = readUserProfileFromSqlTable();
 //        for(User user:list){
 //            System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
 //        }
-    }
+////    }
+//           }
+
+
 }

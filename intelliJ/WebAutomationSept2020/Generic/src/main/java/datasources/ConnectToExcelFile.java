@@ -98,7 +98,7 @@ public class ConnectToExcelFile {
     }
 
 
-    public static void main(String [] args)throws IOException {
+//    public static void main(String [] args)throws IOException {
 //        String [][] dataSource = {};
 //        String path = System.getProperty("user.dir")+"/BestBuy/data/best-buy-file2.xls";
 //        dataSource = fileReader1(path,0);
@@ -107,7 +107,7 @@ public class ConnectToExcelFile {
 //                System.out.println(dataSource[i][j]);
 //            }
 //        }
-
-
-    }
+//
+//
+//    }
 }

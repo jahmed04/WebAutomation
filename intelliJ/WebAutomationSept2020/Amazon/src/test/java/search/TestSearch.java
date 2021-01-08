@@ -13,10 +13,12 @@ import java.util.List;
 public class TestSearch extends CommonAPI {
 
     DataReader dataReader = new DataReader();
+
+    // first database for search bar
     @Test
     public void test1() throws Exception {
         List<String> list = dataReader.getItemListFromDB();
-        for(String items: list) {
+        for (String items : list) {
             typeOnWebElementNHitEnter("#twotabsearchtextbox", items);
             clearInputField("#twotabsearchtextbox");
         }
@@ -24,12 +26,24 @@ public class TestSearch extends CommonAPI {
 
 
 
+    //  second database for search bar
+//    @Test
+//    public void test2() throws Exception {
+//        List<String> list1 = dataReader.getSecondListFromDB();
+//        for (String items : list1) {
+//            typeOnWebElementNHitEnter("#twotabsearchtextbox", items);
+//            clearInputField("#twotabsearchtextbox");
+//        }
+
+
+//
+
 
 
 
 
 //    @Test
-//    public void test1() {
+//    public void test2() {
 //        List<String> list = SearchItems.getSearchItems();
 //
 //        for(String items: list) {
@@ -42,5 +56,5 @@ public class TestSearch extends CommonAPI {
 //    }
 
 
+    }
 
-}

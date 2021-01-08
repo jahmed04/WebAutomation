@@ -11,8 +11,8 @@ import java.io.IOException;
 public class TestNewsSection extends CommonAPI {
 
 
-    // excel file related test
-
+//    // excel file related test
+//
     @Test
     public void allFeatures() throws InterruptedException, IOException {
         AllFunctionality functionality = PageFactory.initElements(driver, AllFunctionality.class);
@@ -20,13 +20,14 @@ public class TestNewsSection extends CommonAPI {
 
     }
 
+
+
     // section menu test for all the pages I did
 
 //    @Test
 //    public void allFeatures() throws InterruptedException {
 //        AllFunctionality functionality = PageFactory.initElements(driver, AllFunctionality.class);
 //        functionality.sectionsMenu(driver);
-//
 //    }
 
 
