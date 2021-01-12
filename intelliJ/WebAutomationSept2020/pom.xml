@@ -78,7 +78,8 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFiles>target/test-classes/NYPTestRunner.xml</suiteXmlFiles>
+<!--                        <suiteXmlFiles>target/test-classes/NYPTestRunner.xml</suiteXmlFiles>-->
+                        <suiteXmlFiles>target/test-classes/W3SchoolTestRunner.xml</suiteXmlFiles>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

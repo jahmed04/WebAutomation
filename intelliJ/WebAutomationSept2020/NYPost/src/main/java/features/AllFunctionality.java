@@ -17,6 +17,7 @@ public class AllFunctionality {
     SectionPage sectionPage = null;
     SearchPage searchPage = null;
     SignUpPage signUpPage = null;
+    private Object WebDriver;
 
     public void signUp(WebDriver driver){
         landingPage = PageFactory.initElements(driver, LandingPage.class);
@@ -40,25 +41,18 @@ public class AllFunctionality {
 
     public void sectionsMenu(WebDriver driver) throws InterruptedException, IOException {    // clicking into different sections
 
-//        clickOnSectionMenu(driver);
-//        SectionPage = PageFactory.initElements(driver, SectionPage.class);
-//
-////        // these two lines
-////
-//        String headLineNews = sectionPage.goToMetroPage(driver).
-//        System.out.println(headLineNews);
-//
-//        clickOnSectionMenu(driver);
-//
-//        sectionPage.gotoNewsPage(driver).clickOnHeadLineNews();
-//        clickOnSectionMenu(driver);
-//
-//
-//        sectionPage.goToMetroPage(driver).clickOnHeadLineNews();
-//        clickOnSectionMenu(driver);
-//
-//        sectionPage.gotoSportsPage(driver).clickOnHeadLineNews();
-//        clickOnSectionMenu(driver);
+        clickOnSectionMenu(driver);
+        sectionPage = PageFactory.initElements(driver, SectionPage.class);
+
+        // these two lines
+
+        String headLineNews = sectionPage.goToMetroPage(driver).getHeadLineNewsText();  // issue
+        System.out.println(headLineNews);
+        clickOnSectionMenu(driver);
+
+        sectionPage.goToBusinessPage(driver).clickOnHeadLineNews();
+        clickOnSectionMenu(driver);
+        sectionPage.goToEntertainmentPage(driver).clickOnHeadLineNews();
 
 
 
@@ -67,10 +61,10 @@ public class AllFunctionality {
         // before adding excel file test update
 
 
-        clickOnSectionMenu(driver);
-        sectionPage = PageFactory.initElements(driver, SectionPage.class);
-
-        sectionPage.gotoNewsPage(driver).clickOnHeadLineNews();
+//        clickOnSectionMenu(driver);
+//        sectionPage = PageFactory.initElements(driver, SectionPage.class);
+//
+//        sectionPage.gotoNewsPage(driver).clickOnHeadLineNews();
 //        clickOnSectionMenu(driver);
 //
 //        sectionPage.goToMetroPage(driver).clickOnHeadLineNews();
@@ -117,38 +111,59 @@ public class AllFunctionality {
 //
 //    }
 
-
-
-
     //  excel file related method
 
-    public void runAllTheFeatureTest (WebDriver driver) throws InterruptedException,IOException {
-        FetchTheSteps fetchTheSteps = new FetchTheSteps();
-        String [] featureSteps = fetchTheSteps.getDataFromExcelFile();   // issue
+        public void runAllTheFeatureTest (WebDriver driver) throws InterruptedException,IOException {
+            FetchTheSteps fetchTheSteps = new FetchTheSteps();
+            String [] featureSteps = fetchTheSteps.getDataFromExcelFile();   // issue
 
-        for (int i=1; i< featureSteps.length; i++) {
-            select(featureSteps[i], driver );
+            for (int i=1; i< featureSteps.length; i++) {
+                select2(featureSteps[i], driver );
+            }
         }
-    }
-
-
-
-
-    public void select(String featureName, WebDriver driver) throws InterruptedException, IOException {
-        switch(featureName){
-            case "signUp":
-                signUp(driver);
-                break;
-            case "sectionsMenu":
-                sectionsMenu(driver);
-                break;
-            case "search":
-                search(driver);
-                break;
-            default:
-                throw new InvalidArgumentException("Invalid features choice");
+        public void select2(String featureName, WebDriver driver) throws InterruptedException, IOException {
+            switch(featureName){
+                case "metro":
+                    signUp(driver);
+                    break;
+                case "business":
+                    sectionsMenu(driver);
+                    break;
+                case "entertainment":
+                    search(driver);
+                    break;
+                default:
+                    throw new InvalidArgumentException("Invalid features choice");
+            }
         }
-    }
+
+
+
+
+
+//    public void runAllTheFeatureTest (WebDriver driver) throws InterruptedException,IOException {
+//        FetchTheSteps fetchTheSteps = new FetchTheSteps();
+//        String [] featureSteps = fetchTheSteps.getDataFromExcelFile();   // issue
+//
+//        for (int i=1; i< featureSteps.length; i++) {
+//            select(featureSteps[i], driver );
+//        }
+//    }
+//    public void select(String featureName, WebDriver driver) throws InterruptedException, IOException {
+//        switch(featureName){
+//            case "signUp":
+//                signUp(driver);
+//                break;
+//            case "sectionsMenu":
+//                sectionsMenu(driver);
+//                break;
+//            case "search":
+//                search(driver);
+//                break;
+//            default:
+//                throw new InvalidArgumentException("Invalid features choice");
+//        }
+//    }
 
 
 }

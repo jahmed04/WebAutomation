@@ -41,7 +41,7 @@ public class ConnectToSqlDB {
         try{
             connectToSqlDatabase();
             statement = connect.createStatement();
-            resultSet = statement.executeQuery("select* from " + tableName+";");   // input = "select* from" + tableName
+            resultSet = statement.executeQuery("select* from " + tableName+";");   //  ";" was missing
             data = getResultSetData (resultSet, columnName);
         } catch (ClassNotFoundException e) {
             throw e;
@@ -178,7 +178,7 @@ public class ConnectToSqlDB {
 //        for(User user:list){
 //            System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
 //        }
-////    }
+////         }
 //           }
 
 

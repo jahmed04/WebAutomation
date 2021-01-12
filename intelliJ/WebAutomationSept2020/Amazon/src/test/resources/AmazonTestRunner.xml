@@ -14,7 +14,7 @@
     <test name = "Amazon Home">
 
         <classes>
-            <class name="search.TestTopBarOptions"></class>
+            <class name="search.TestAllTheFeatures"></class>
 <!--            <class name="search.TestSearch"></class>-->
 <!--            <class name="search.TestPrime"></class>-->
 <!--            <class name="search.DropDownMenu"></class>-->
