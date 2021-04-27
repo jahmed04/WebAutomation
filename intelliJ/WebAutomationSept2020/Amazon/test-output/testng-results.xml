@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-03-01T02:38:18Z" name="Amazon Test Script" finished-at="2021-03-01T02:38:42Z" duration-ms="24199">
+    <groups>
+    </groups>
+    <test started-at="2021-03-01T02:38:18Z" name="Amazon Home" finished-at="2021-03-01T02:38:42Z" duration-ms="24199">
+      <class name="search.TestAllTheFeatures">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:search.TestAllTheFeatures@101df177]" started-at="2021-03-01T02:38:18Z" name="setUp" finished-at="2021-03-01T02:38:28Z" duration-ms="10398" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="bestSellers()[pri:0, instance:search.TestAllTheFeatures@101df177]" started-at="2021-03-01T02:38:28Z" name="bestSellers" finished-at="2021-03-01T02:38:42Z" duration-ms="13639" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bestSellers -->
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:search.TestAllTheFeatures@101df177]" started-at="2021-03-01T02:38:42Z" name="cleanUp" finished-at="2021-03-01T02:38:42Z" duration-ms="121" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+      </class> <!-- search.TestAllTheFeatures -->
+    </test> <!-- Amazon Home -->
+  </suite> <!-- Amazon Test Script -->
+</testng-results>

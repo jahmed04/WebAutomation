@@ -17,7 +17,8 @@ public class ConnectToSqlDB {
 
     public static Properties loadlocalProperties() throws IOException { // loadlocalProperties = loadProperties
         Properties prop = new Properties();
-        InputStream ism = new FileInputStream("../Generic/src/local-secret.properties");
+         InputStream ism = new FileInputStream("../Generic/src/local-secret.properties");
+        //InputStream ism = new FileInputStream("../Generic/src/aws-secret.properties");  //   fetching data from aws
         prop.load(ism);
         ism.close();
         return prop;

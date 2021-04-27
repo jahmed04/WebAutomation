@@ -33,13 +33,13 @@ public class DropDownMenu extends CommonAPI {
 
 
     //  different way
-//    @Test
-//    public void dropDown(){
-//        List<WebElement> elementList = driver.findElements(By.cssSelector(".nav-search-dropdown.searchSelect option"));
-//        for(WebElement element: elementList){
-//            System.out.println(element.getText());
-//        }
-//    }
+    @Test
+    public void dropDown(){
+        List<WebElement> elementList = driver.findElements(By.cssSelector(".nav-search-dropdown.searchSelect option"));
+        for(WebElement element: elementList){
+            System.out.println(element.getText());
+        }
+    }
 
 
 

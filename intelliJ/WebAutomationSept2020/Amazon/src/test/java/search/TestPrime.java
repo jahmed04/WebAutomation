@@ -14,7 +14,7 @@ public class TestPrime extends CommonAPI {
     @Test
         public void primeTest() throws Exception {
 
-        clickOnWebElement("nav-link-prime");    // id based locator  (clicking on prime button first)
+        //clickOnWebElement("nav-link-prime");    // id based locator  (clicking on prime button first)
             List<String> list2 = prime.getPrimeListFromDB();
             for (String items : list2) {
                 typeOnWebElementNHitEnter("#twotabsearchtextbox", items);

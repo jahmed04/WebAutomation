@@ -46,8 +46,8 @@ public class AllFunctionality {
 
         // these two lines
 
-        String headLineNews = sectionPage.goToMetroPage(driver).getHeadLineNewsText();  // issue
-        System.out.println(headLineNews);
+//        String headLineNews = sectionPage.goToMetroPage(driver).getHeadLineNewsText();  // issue
+//        System.out.println(headLineNews);
         clickOnSectionMenu(driver);
 
         sectionPage.goToBusinessPage(driver).clickOnHeadLineNews();
@@ -113,29 +113,29 @@ public class AllFunctionality {
 
     //  excel file related method
 
-        public void runAllTheFeatureTest (WebDriver driver) throws InterruptedException,IOException {
-            FetchTheSteps fetchTheSteps = new FetchTheSteps();
-            String [] featureSteps = fetchTheSteps.getDataFromExcelFile();   // issue
-
-            for (int i=1; i< featureSteps.length; i++) {
-                select2(featureSteps[i], driver );
-            }
-        }
-        public void select2(String featureName, WebDriver driver) throws InterruptedException, IOException {
-            switch(featureName){
-                case "metro":
-                    signUp(driver);
-                    break;
-                case "business":
-                    sectionsMenu(driver);
-                    break;
-                case "entertainment":
-                    search(driver);
-                    break;
-                default:
-                    throw new InvalidArgumentException("Invalid features choice");
-            }
-        }
+//        public void runAllTheFeatureTest (WebDriver driver) throws InterruptedException,IOException {
+//            FetchTheSteps fetchTheSteps = new FetchTheSteps();
+//            String [] featureSteps = fetchTheSteps.getDataFromExcelFile();   // issue
+//
+//            for (int i=1; i< featureSteps.length; i++) {
+//                select2(featureSteps[i], driver );
+//            }
+//        }
+//        public void select2(String featureName, WebDriver driver) throws InterruptedException, IOException {
+//            switch(featureName){
+//                case "metro":
+//                    signUp(driver);
+//                    break;
+//                case "business":
+//                    sectionsMenu(driver);
+//                    break;
+//                case "entertainment":
+//                    search(driver);
+//                    break;
+//                default:
+//                    throw new InvalidArgumentException("Invalid features choice");
+//            }
+//        }
 
 
 
@@ -163,7 +163,7 @@ public class AllFunctionality {
 //            default:
 //                throw new InvalidArgumentException("Invalid features choice");
 //        }
-//    }
+    }
 
 
 }

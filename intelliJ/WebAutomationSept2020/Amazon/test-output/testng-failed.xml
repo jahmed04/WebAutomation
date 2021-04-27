@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Amazon Test Script]" guice-stage="DEVELOPMENT">
+  <parameter name="useCloudEnv" value="false"/>
+  <parameter name="os" value="OS X"/>
+  <parameter name="envName" value="browserstack"/>
+  <parameter name="os_version" value="Sierra"/>
+  <parameter name="browserVersion" value="80.0"/>
+  <parameter name="browserName" value="chrome"/>
+  <parameter name="url" value="http://amazon.com"/>
+  <test thread-count="5" name="Amazon Home(failed)">
+    <classes>
+      <class name="search.TestAllTheFeatures">
+        <methods>
+          <include name="bestSellers"/>
+          <include name="setUp"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- search.TestAllTheFeatures -->
+    </classes>
+  </test> <!-- Amazon Home(failed) -->
+</suite> <!-- Failed suite [Amazon Test Script] -->
